@@ -11,6 +11,7 @@ Clone
 =============
 
 To use this configuration:
+
 - ``cd ~ && git clone git://github.com/padeler/vim.git .vim``
 - ``cd ~ && ln -s .vimrc .vim/vimrc`` #(not needed if vim looks for .vim/vimrc)
 - ``cd ~/.vim && git submodule update --init`` #(to get all plugins from git)
@@ -21,6 +22,7 @@ Plugins
 ========
 
 The following plugins are used:
+
 - pathogen. For plugin loading.
 - `jedi <https://github.com/davidhalter/jedi-vim>`_. Python code completion
 - `pyflakes <https://github.com/kevinw/pyflakes-vim>`_. Python syntax checking
@@ -30,5 +32,5 @@ The following plugins are used:
 - `powerline <https://github.com/Lokaltog/powerline>`_. A status bar for VIM.
 - `taglist <http://vim-taglist.sourceforge.net/>`_. Shows a taglist (outline) 
   of the open files
-  -- supports java, c/c++, python, etc
-  -- requires exuberant-ctags to work with C/C++
+  - supports java, c/c++, python, etc
+  - requires exuberant-ctags to work with C/C++
