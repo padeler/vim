@@ -14,10 +14,7 @@ autocmd! bufwritepost ~/.vim/vimrc source %
 
 " Bind nohl
 " Removes highlight of your last search
-" ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
-noremap <C-n> :nohl<CR>
-vnoremap <C-n> :nohl<CR>
-inoremap <C-n> :nohl<CR>
+noremap <leader>n :nohl<CR>
 
 " bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
@@ -55,6 +52,7 @@ vnoremap > >gv  " better indentation
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 set t_Co=256
 "color wombat256mod
+"color adrian
 
 filetype plugin indent on
 filetype plugin on
@@ -121,6 +119,15 @@ au InsertEnter * :set nu nornu
 au InsertLeave * :set nonu rnu
 set nonu rnu
 
+
+" Easilly move lines up/down in normal, insert or visual mode.
+nnoremap <A-Down> :m .+1<CR>==
+nnoremap <A-Up> :m .-2<CR>==
+inoremap <A-Down> <Esc>:m .+1<CR>==gi
+inoremap <A-Up> <Esc>:m .-2<CR>==gi
+vnoremap <A-Down> :m '>+1<CR>gv=gv
+vnoremap <A-Up> :m '<-2<CR>gv=gv
+
 " Map the CTRL-F11 key to run Python code. Test your
 " code the easy way. Press to run the code, then to return to Vim. This will
 " allow you to easily press the letter 'u' to undo anything that does not work.
@@ -149,5 +156,16 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 " map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
+" TagList Config
+" Map TListToggle to <leader>o (o for outline)
+map <C-o> :TlistToggle<CR>
+let Tlist_Use_Right_Window=1
+let Tlist_Compact_Format=1
+
+" NERD Tree Config
+" NERD Tree is a file browser for VIM
+map <C-n> :NERDTreeToggle<CR>
+" Close vim is the last window open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 
