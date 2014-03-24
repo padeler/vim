@@ -33,7 +33,7 @@ nnoremap <silent> <C-Down> <c-w>j
 " easier moving between tabs
 map <Leader>, <esc>:tabprevious<CR>
 map <Leader>. <esc>:tabnext<CR>
-map <Leader>n <esc>:tabnew<CR>
+map <Leader>t <esc>:tabnew<CR>
 
 " map sort function to a key
 vnoremap <Leader>s :sort<CR>
