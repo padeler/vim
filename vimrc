@@ -117,9 +117,9 @@ command! SUwrite % !sudo tee > /dev/null %
 
 
 " absolute line numbers in insert mode, relative otherwise for easy movement
-au InsertEnter * :set nu
-au InsertLeave * :set rnu
-set rnu
+au InsertEnter * :set nu nornu
+au InsertLeave * :set nonu rnu
+set nonu rnu
 
 " Map the CTRL-F11 key to run Python code. Test your
 " code the easy way. Press to run the code, then to return to Vim. This will
