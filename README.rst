@@ -1,5 +1,5 @@
 #################################################
-padeler's vim configuration 
+Yet Another Vimrc 
 #################################################
 
 All the plugins used are selected to work with the default vim buildon various
@@ -29,7 +29,7 @@ The following plugins are used:
 * pythoncomplete. Python omni complete, used by jedi
 * `pydoc <https://github.com/fs111/pydoc.vim>`_. Display PyDoc.
 * `nerdtree <https://github.com/scrooloose/nerdtree>`_. Very nice file browser. 
-* `powerline <https://github.com/Lokaltog/powerline>`_. A status bar for VIM.
+* `powerline <https://github.com/Lokaltog/vim-powerline>`_. A status bar for VIM.
 * `taglist <http://vim*taglist.sourceforge.net/>`_. Shows a taglist (outline) of the open files
   * supports java, c/c++, python, etc
   * requires exuberant-ctags to work with C/C++

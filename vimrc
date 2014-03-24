@@ -141,7 +141,9 @@ call pathogen#infect()
 " =================================================
 
 " Settings for vim-powerline
-" git clone git://github.com/Lokaltog/vim-powerline.git
+
+" This is for the new powerlong but for now i am using the legacy. 
+" set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 
 " Pyflakes config
