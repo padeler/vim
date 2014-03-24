@@ -33,6 +33,7 @@ nnoremap <silent> <C-Down> <c-w>j
 " easier moving between tabs
 map <Leader>, <esc>:tabprevious<CR>
 map <Leader>. <esc>:tabnext<CR>
+map <Leader>n <esc>:tabnew<CR>
 
 " map sort function to a key
 vnoremap <Leader>s :sort<CR>
@@ -67,8 +68,22 @@ set nowrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
 set colorcolumn=80
 highlight ColorColumn ctermbg=233
+set cursorline
+highlight cursorline ctermbg=17 term=bold cterm=NONE guibg=Gray40
 
+autocmd WinLeave * set nocursorline
+autocmd WinEnter * set cursorline
+
+
+
+" Enable mouse support. 
+" NOTE: This breaks copy-paste. Use shift when highlighting text to 
+" fall back to the default copy-paste behaivior of the terminal.
 set mouse=a
+
+" Auto read files that have changed on disk.
+" set autoread
+" au WinEnter,TabEnter,FocusGained,BufEnter * :silent! !
 
 " easier formatting of paragraphs
 vmap Q gq
@@ -111,7 +126,7 @@ set rnu
 " allow you to easily press the letter 'u' to undo anything that does not work.
 " Of course you can substitute :!python % for :!bash % to run your Bash
 " scripts!
-map <C-F11> :w<CR>:!python % <CR>
+map <C-F11> :w<CR>:!ipython % <CR>
 
 " ================ Plugin Settings ================ 
 " Enable pathogen to load plugins under bundle/
