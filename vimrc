@@ -71,8 +71,8 @@ highlight ColorColumn ctermbg=233
 set mouse=a
 
 " easier formatting of paragraphs
-"vmap Q gq
-"nmap Q gqap
+vmap Q gq
+nmap Q gqap
 
 " Useful settings
 set history=1000
@@ -90,6 +90,28 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+" ===== Cool stuff found on vimbits.com ===== 
+"
+
+" MAP w!! to sudo w!
+" Sometimes I forget to run vim with sudo privileges especially when editing
+" files under /etc. I use w!! to override the permissions and saves the file as
+" sudo.
+command! SUwrite % !sudo tee > /dev/null % 
+
+
+" absolute line numbers in insert mode, relative otherwise for easy movement
+au InsertEnter * :set nu
+au InsertLeave * :set rnu
+set rnu
+
+" Map the CTRL-F11 key to run Python code. Test your
+" code the easy way. Press to run the code, then to return to Vim. This will
+" allow you to easily press the letter 'u' to undo anything that does not work.
+" Of course you can substitute :!python % for :!bash % to run your Bash
+" scripts!
+map <C-F11> :w<CR>:!python % <CR>
 
 " ================ Plugin Settings ================ 
 " Enable pathogen to load plugins under bundle/
