@@ -12,35 +12,6 @@ filetype off
 autocmd! bufwritepost ~/.vim/vimrc source %
 
 
-" Bind nohl
-" Removes highlight of your last search
-noremap <leader>n :nohl<CR>
-
-" bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
-" Every unnecessary keystroke that can be saved is good for your health :)
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-nnoremap <silent> <C-Right> <c-w>l
-nnoremap <silent> <C-Left> <c-w>h
-nnoremap <silent> <C-Up> <c-w>k
-nnoremap <silent> <C-Down> <c-w>j
-
-" easier moving between tabs
-map <Leader>, <esc>:tabprevious<CR>
-map <Leader>. <esc>:tabnext<CR>
-map <Leader>t <esc>:tabnew<CR>
-
-" map sort function to a key
-vnoremap <Leader>s :sort<CR>
-
-" easier moving of code blocks
-" Try to go into visual mode (v), thenselect several lines of code here and
-" then press ``>`` several times.
-vnoremap < <gv  " better indentation
-vnoremap > >gv  " better indentation
-
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
 " XXX This is working only with Scemes that define the ExtraWhitespace field.
@@ -85,10 +56,6 @@ set mouse=a
 " set autoread
 " au WinEnter,TabEnter,FocusGained,BufEnter * :silent! !
 
-" easier formatting of paragraphs
-vmap Q gq
-nmap Q gqap
-
 " Useful settings
 set history=1000
 set undolevels=1000
@@ -106,21 +73,42 @@ set incsearch
 set ignorecase
 set smartcase
 
-" ===== Cool stuff found on vimbits.com ===== 
-"
+" ============================================================================
+" ================= Cool stuff found on vimbits.com ========================== 
+" ============================================================================
 
-" MAP w!! to sudo w!
+" easier formatting of paragraphs
+vmap Q gq
+nmap Q gqap
+
+" MAP SUWrite to sudo w!
 " Sometimes I forget to run vim with sudo privileges especially when editing
 " files under /etc. I use w!! to override the permissions and saves the file as
 " sudo.
 command! SUwrite % !sudo tee > /dev/null % 
 
+" Bind nohl
+" Removes highlight of your last search
+noremap <leader>n :nohl<CR>
 
 " absolute line numbers in insert mode, relative otherwise for easy movement
 au InsertEnter * :set nu nornu
 au InsertLeave * :set nonu rnu
 set nonu rnu
 
+" easier moving between tabs
+map <Leader>, <esc>:tabprevious<CR>
+map <Leader>. <esc>:tabnext<CR>
+map <Leader>t <esc>:tabnew<CR>
+
+" map sort function to a key
+vnoremap <Leader>s :sort<CR>
+
+" easier moving of code blocks
+" Try to go into visual mode (v), thenselect several lines of code here and
+" then press ``>`` several times.
+vnoremap < <gv  " better indentation
+vnoremap > >gv  " better indentation
 
 " Easilly move lines up/down in normal, insert or visual mode.
 nnoremap <A-Down> :m .+1<CR>==
@@ -137,10 +125,25 @@ vnoremap <A-Up> :m '<-2<CR>gv=gv
 " scripts!
 map <C-F11> :w<CR>:!ipython % <CR>
 
-" ================ Plugin Settings ================ 
+" bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
+" Every unnecessary keystroke that can be saved is good for your health :)
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+nnoremap <silent> <C-Right> <c-w>l
+nnoremap <silent> <C-Left> <c-w>h
+nnoremap <silent> <C-Up> <c-w>k
+nnoremap <silent> <C-Down> <c-w>j
+
+" ===========================================================================
+" ========================= Plugin Settings ================================= 
+" ===========================================================================
+"
 " Enable pathogen to load plugins under bundle/
+" TODO Maybe change to Vundle
 call pathogen#infect()
-" =================================================
+" ===========================================================================
 
 " Settings for vim-powerline
 
@@ -164,13 +167,14 @@ nnoremap <A-Left> :lprev<CR>
 " Settings for jedi-vim
 " cd ~/.vim/bundle
 " git clone git://github.com/davidhalter/jedi-vim.git
+" XXX Maybe switch to YouCompleteMe.
 let g:jedi#usages_command = "<leader>z"
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 " map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " TagList Config
-" Map TListToggle to <leader>o (o for outline)
+" Map TListToggle to <Control>o (o for outline)
 map <C-o> :TlistToggle<CR>
 let Tlist_Use_Right_Window=1
 let Tlist_Compact_Format=1
@@ -180,5 +184,4 @@ let Tlist_Compact_Format=1
 map <C-n> :NERDTreeToggle<CR>
 " Close vim is the last window open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 
