@@ -2,9 +2,9 @@
 Yet Another Vimrc 
 #################################################
 
-All the plugins used are selected to work with the default vim buildon various
-ubuntu versions (tested on 12.04 and later) vim 7.3 and later.
-I mostly use vim with python and c/c++ so there is an emphasis on these
+All the plugins are selected to work with the default vim build on various
+ubuntu versions (tested on 12.04 and later) for vim 7.3 and later.
+I mostly use vim with python and C/C++ so there is an emphasis on these
 languages in this setup.
 
 Clone
@@ -25,7 +25,7 @@ The following plugins are used:
 
 * pathogen. For plugin loading.
 * `jedi <https://github.com/davidhalter/jedi*vim>`_. Python code completion
-* `pyflakes <https://github.com/kevinw/pyflakes*vim>`_. Python syntax checking
+* `syntastic <https://github.com/scrooloose/syntastic>`_. Python/C/C++/Java etc syntax checking
 * pythoncomplete. Python omni complete, used by jedi
 * `pydoc <https://github.com/fs111/pydoc.vim>`_. Display PyDoc.
 * `nerdtree <https://github.com/scrooloose/nerdtree>`_. Very nice file browser. 
