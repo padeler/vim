@@ -49,9 +49,11 @@ vnoremap > >gv  " better indentation
 
 " Color scheme
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
-" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 set t_Co=256
-"color wombat256mod
+set background=dark
+color wombat256mod
+"color candy
+"color distinguished
 "color adrian
 
 filetype plugin indent on
@@ -153,8 +155,9 @@ highlight SyntasticWarn cterm=undercurl ctermfg=Yellow term=underline
 let g:syntastic_check_on_open = 1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
-nnoremap <C-Right> :lnext<CR>
-nnoremap <C-Left> :lprev<CR>
+" Map item list (which is where :Errors are stored by syntastic) to Alt-Left and Alt-Right 
+nnoremap <A-Right> :lnext<CR>
+nnoremap <A-Left> :lprev<CR>
 
 
 
