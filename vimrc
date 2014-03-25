@@ -146,8 +146,16 @@ call pathogen#infect()
 " set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 
-" Pyflakes config
-let g:pyflakes_use_quickfix = 0
+" Syntastic config
+let g:syntastic_python_checkers = ['pyflakes', 'python']
+highlight SyntasticError cterm=undercurl ctermfg=Red term=underline
+highlight SyntasticWarn cterm=undercurl ctermfg=Yellow term=underline
+let g:syntastic_check_on_open = 1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+nnoremap <C-Right> :lnext<CR>
+nnoremap <C-Left> :lprev<CR>
+
 
 
 " Settings for jedi-vim
