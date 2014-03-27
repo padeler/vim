@@ -29,6 +29,9 @@ color wombat256mod
 
 filetype plugin indent on
 filetype plugin on
+
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl 
+
 " Enable syntax highlighting
 syntax on
 
