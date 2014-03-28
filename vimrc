@@ -147,9 +147,7 @@ nnoremap <silent> <C-Down> <c-w>j
 " TODO Maybe change to Vundle
 call pathogen#infect()
 " ===========================================================================
-
 " Settings for vim-powerline
-
 " This is for the new powerlong but for now i am using the legacy. 
 " set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
