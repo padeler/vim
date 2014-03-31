@@ -76,6 +76,9 @@ set incsearch
 set ignorecase
 set smartcase
 
+" enable special python syntax 
+let python_highlight_all=1
+
 " ============================================================================
 " ================= Cool stuff found on vimbits.com ========================== 
 " ============================================================================
