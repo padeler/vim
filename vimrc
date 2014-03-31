@@ -139,6 +139,10 @@ nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
+
+" enable python specific syntax highlight
+let python_highlight_all=1 
+
 " ===========================================================================
 " ========================= Plugin Settings ================================= 
 " ===========================================================================
