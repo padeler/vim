@@ -8,6 +8,36 @@
 syntax off
 filetype off
 
+" Initialize Vundle
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle, required
+Plugin 'gmarik/vundle' 
+" YCM 
+Bundle 'Valloric/YouCompleteMe'
+" Code and files fuzzy finder
+Bundle 'kien/ctrlp.vim'
+" Extension to ctrlp, for fuzzy command finder
+Bundle 'fisadev/vim-ctrlp-cmdpalette'
+" Better file browser
+Bundle 'scrooloose/nerdtree'
+" Class/module browser
+Bundle 'majutsushi/tagbar'
+" Airline
+Bundle 'bling/vim-airline'
+" Drag visual blocks arround
+Bundle 'fisadev/dragvisuals.vim'
+" Tab list panel
+Bundle 'kien/tabman.vim'
+" Syntastic syntax checking
+Bundle 'scrooloose/syntastic'
+" Nerd-commenter
+Bundle 'scrooloose/nerdcommenter'
+" Jedi-vim
+Bundle 'davidhalter/jedi-vim'
+
+
 " Automatic reloading of .vimrc
 autocmd! bufwritepost ~/.vim/vimrc source %
 
@@ -141,20 +171,25 @@ nnoremap <silent> <C-Down> <c-w>j
 
 
 " enable python specific syntax highlight
-let python_highlight_all=1 
+" let python_highlight_all=2 
 
 " ===========================================================================
 " ========================= Plugin Settings ================================= 
 " ===========================================================================
 "
-" Enable pathogen to load plugins under bundle/
-" TODO Maybe change to Vundle
-call pathogen#infect()
-" ===========================================================================
-" Settings for vim-powerline
-" This is for the new powerlong but for now i am using the legacy. 
-" set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+" Airline config
 set laststatus=2
+
+" Remap CtrlPCmdPallette to auto complete commands
+nnoremap <leader>p :CtrlPCmdPalette<CR>
+
+
+" Drag Visual blocks config
+vmap <expr> <M-LEFT> DVB_Drag('left')
+vmap <expr> <M-RIGHT> DVB_Drag('right')
+vmap <expr> <M-DOWN> DVB_Drag('down')
+vmap <expr> <M-UP> DVB_Drag('up')
+vmap <expr> D DVB_Duplicate()
 
 " Syntastic config
 let g:syntastic_python_checkers = ['pyflakes', 'python']
@@ -170,21 +205,16 @@ nnoremap <A-Left> :lprev<CR>
 
 
 " Settings for jedi-vim
-" cd ~/.vim/bundle
-" git clone git://github.com/davidhalter/jedi-vim.git
 " XXX Maybe switch to YouCompleteMe.
-let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
-" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+"let g:jedi#usages_command = "<leader>z"
+"let g:jedi#popup_on_dot = 0
+"let g:jedi#popup_select_first = 0
+" "map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
-" TagList Config
-" Map TListToggle to <Control>o (o for outline)
-map <C-o> :TlistToggle<CR>
-let Tlist_Use_Right_Window=1
-let Tlist_Compact_Format=1
+" TagBar Config
+map <C-o> :TagbarToggle<CR>
 
-" NERD Tree Config
+ "NERD Tree Config
 " NERD Tree is a file browser for VIM
 map <C-n> :NERDTreeToggle<CR>
 " Close vim is the last window open is NERDTree
