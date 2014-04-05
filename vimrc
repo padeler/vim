@@ -71,9 +71,9 @@ set tw=79   " width of document (used by gd)
 set nowrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
 set colorcolumn=80
-highlight ColorColumn ctermbg=233
+highlight ColorColumn ctermbg=233 guibg=Gray10
 set cursorline
-highlight cursorline ctermbg=17 term=bold cterm=NONE guibg=Gray40
+highlight cursorline ctermbg=17 term=bold cterm=NONE guibg=#000030
 
 autocmd WinLeave * set nocursorline
 autocmd WinEnter * set cursorline
@@ -171,7 +171,7 @@ nnoremap <silent> <C-Down> <c-w>j
 
 
 " enable python specific syntax highlight
-" let python_highlight_all=2 
+" let python_highlight_all=1 
 
 " ===========================================================================
 " ========================= Plugin Settings ================================= 
