@@ -37,6 +37,9 @@ Bundle 'scrooloose/nerdcommenter'
 " Jedi-vim
 Bundle 'davidhalter/jedi-vim'
 
+" Conque Shell XXX Disabled.
+"Bundle vim-scripts/Conque-Shell
+
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost ~/.vim/vimrc source %
@@ -56,6 +59,9 @@ color wombat256mod
 "color candy
 "color distinguished
 "color adrian
+
+" set another theme for the airline 
+let g:airline_theme = 'bubblegum'
 
 filetype plugin indent on
 filetype plugin on
@@ -183,6 +189,9 @@ set laststatus=2
 " Remap CtrlPCmdPallette to auto complete commands
 nnoremap <leader>p :CtrlPCmdPalette<CR>
 
+" Nerd Commenter Toggle comment
+map ./ <plug>NERDCommenterToggle
+
 
 " Drag Visual blocks config
 vmap <expr> <M-LEFT> DVB_Drag('left')
@@ -192,7 +201,7 @@ vmap <expr> <M-UP> DVB_Drag('up')
 vmap <expr> D DVB_Duplicate()
 
 " Syntastic config
-let g:syntastic_python_checkers = ['pyflakes', 'python']
+let g:syntastic_python_checkers = ['python'] ", 'pyflakes' ]
 highlight SyntasticError cterm=undercurl ctermfg=Red term=underline
 highlight SyntasticWarn cterm=undercurl ctermfg=Yellow term=underline
 let g:syntastic_check_on_open = 1
@@ -205,13 +214,13 @@ nnoremap <A-Left> :lprev<CR>
 
 
 " Settings for jedi-vim
-" XXX Maybe switch to YouCompleteMe.
+"" XXX Maybe switch to YouCompleteMe.
 "let g:jedi#usages_command = "<leader>z"
 "let g:jedi#popup_on_dot = 0
 "let g:jedi#popup_select_first = 0
 " "map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
-" TagBar Config
+ "TagBar Config
 map <C-o> :TagbarToggle<CR>
 
  "NERD Tree Config
