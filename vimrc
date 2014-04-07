@@ -15,7 +15,7 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle' 
 " YCM 
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 " Code and files fuzzy finder
 Bundle 'kien/ctrlp.vim'
 " Extension to ctrlp, for fuzzy command finder
@@ -36,6 +36,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 " Jedi-vim
 Bundle 'davidhalter/jedi-vim'
+" Python-Mode
+"Bundle 'klen/python-mode'
 
 " Conque Shell XXX Disabled.
 "Bundle vim-scripts/Conque-Shell
