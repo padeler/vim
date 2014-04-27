@@ -14,22 +14,25 @@ To use this configuration:
 
 * ``cd ~ && git clone git://github.com/padeler/vim.git .vim``
 * ``cd ~ && ln -s .vimrc .vim/vimrc`` #(not needed if vim looks for .vim/vimrc)
-* ``cd ~/.vim && git submodule update --init`` #(to get all plugins from git)
-* If you want to use the taglist plugin with C/C++ (see below) install 
-  exuberant-ctags. On debian (and clones): ``sudo apt-get install exuberant-ctags``
+* ``cd ~/.vim && git submodule update --init`` #(to get all plugins from git,
+  actually only vundle)
+* Open vim and in command mode type: **PluginInstall** to install all plugins using
+  vundle
 
 Plugins
 ========
 
 The following plugins are used:
 
-* pathogen. For plugin loading.
-* `jedi <https://github.com/davidhalter/jedi*vim>`_. Python code completion
+* vundle. For plugin management.
+* `jedi-vim <https://github.com/davidhalter/jedi*vim>`_. Python code
+  completion. Requires jedi to be installed. 
 * `syntastic <https://github.com/scrooloose/syntastic>`_. Python/C/C++/Java etc syntax checking
 * pythoncomplete. Python omni complete, used by jedi
-* `pydoc <https://github.com/fs111/pydoc.vim>`_. Display PyDoc.
 * `nerdtree <https://github.com/scrooloose/nerdtree>`_. Very nice file browser. 
-* `powerline <https://github.com/Lokaltog/vim-powerline>`_. A status bar for VIM.
-* `taglist <http://vim*taglist.sourceforge.net/>`_. Shows a taglist (outline) of the open files
-  * supports java, c/c++, python, etc
-  * requires exuberant-ctags to work with C/C++
+* `nerdcommenter <https://github.com/scrooloose/nerdcommenter>`_. Toggle
+  comment on many source types. 
+* `airline <https://github.com/bling/vim-airline>`_. A status bar for VIM.
+* `tagbar <https://github.com/majutsushi/tagbar>`_. Shows a tagbar (outline) of the open files
+* `ctrlp <https://github.com/kien/ctrlp.vim>`_. Fuzzy file, buffer, mru, tag, etc finder.
+
