@@ -13,7 +13,7 @@ Clone
 To use this configuration:
 
 * ``cd ~ && git clone git://github.com/padeler/vim.git .vim``
-* ``cd ~ && ln -s .vimrc .vim/vimrc`` #(not needed if vim looks for .vim/vimrc)
+* ``cd ~ && ln -s .vim/vimrc .vimrc`` #(not needed if vim looks for .vim/vimrc)
 * ``cd ~/.vim && git submodule update --init`` #(to get all plugins from git,
   actually only vundle)
 * Open vim and in command mode type: **PluginInstall** to install all plugins using
