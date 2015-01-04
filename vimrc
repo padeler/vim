@@ -181,6 +181,11 @@ nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
 
+" Bash style auto-complete for paths on 'command mode :' 
+set wildmenu
+set wildmode=list:longest
+
+
 " enable python specific syntax highlight
 " let python_highlight_all=1 
 
