@@ -132,6 +132,9 @@ command! SUwrite % !sudo tee > /dev/null %
 " Removes highlight of your last search
 noremap <leader>n :nohl<CR>
 
+" Map ZZ to ZQ, to avoid accidental :wq! (bad habits)
+nnoremap ZZ ZQ
+
 " absolute line numbers in insert mode, relative otherwise for easy movement
 au InsertEnter * :set nu nornu
 au InsertLeave * :set nonu rnu
