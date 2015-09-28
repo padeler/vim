@@ -2,6 +2,10 @@
 Yet Another Vimrc 
 #################################################
 
+.. image:: https://badges.gitter.im/Join%20Chat.svg
+   :alt: Join the chat at https://gitter.im/padeler/vim
+   :target: https://gitter.im/padeler/vim?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
 All the plugins are selected to work with the default vim build on various
 ubuntu versions (tested on 12.04 and later) for vim 7.3 and later.
 I mostly use vim with python and C/C++ so there is an emphasis on these
