@@ -15,7 +15,7 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle' 
 " YCM 
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 " Code and files fuzzy finder
 Bundle 'kien/ctrlp.vim'
 " Extension to ctrlp, for fuzzy command finder
@@ -23,7 +23,7 @@ Bundle 'fisadev/vim-ctrlp-cmdpalette'
 " Better file browser
 Bundle 'scrooloose/nerdtree'
 " Class/module browser
-Bundle 'majutsushi/tagbar'
+"Bundle 'majutsushi/tagbar'
 " Airline
 Bundle 'bling/vim-airline'
 " Drag visual blocks arround
@@ -31,17 +31,14 @@ Bundle 'fisadev/dragvisuals.vim'
 " Tab list panel
 Bundle 'kien/tabman.vim'
 " Syntastic syntax checking
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 " Nerd-commenter
 Bundle 'scrooloose/nerdcommenter'
 " Jedi-vim
 Bundle 'davidhalter/jedi-vim'
-" Python-Mode
-"Bundle 'klen/python-mode'
 
-" Conque Shell XXX Disabled.
-"Bundle vim-scripts/Conque-Shell
-
+" Since we are using YCM for autocomplete, disable the jedi-vim autocomple
+let g:jedi#completions_enabled = 0
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost ~/.vim/vimrc source %
