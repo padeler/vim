@@ -190,6 +190,12 @@ set wildmode=list:longest
 " ========================= Plugin Settings ================================= 
 " ===========================================================================
 "
+" YCM settings
+" Set the global ycm_extra_conf file for C/C++ auto complete.
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+
+
+"
 " Airline config
 set laststatus=2
 "
