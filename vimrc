@@ -17,21 +17,19 @@ Plugin 'gmarik/vundle'
 " YCM 
 Bundle 'Valloric/YouCompleteMe'
 " Code and files fuzzy finder
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
 " Extension to ctrlp, for fuzzy command finder
-Bundle 'fisadev/vim-ctrlp-cmdpalette'
+"Bundle 'fisadev/vim-ctrlp-cmdpalette'
 " Better file browser
 Bundle 'scrooloose/nerdtree'
 " Class/module browser
-"Bundle 'majutsushi/tagbar'
+Bundle 'majutsushi/tagbar'
 " Airline
 Bundle 'bling/vim-airline'
 " Drag visual blocks arround
 Bundle 'fisadev/dragvisuals.vim'
-" Tab list panel
-Bundle 'kien/tabman.vim'
 " Syntastic syntax checking
-"Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 " Nerd-commenter
 Bundle 'scrooloose/nerdcommenter'
 " Jedi-vim
@@ -214,6 +212,9 @@ highlight SyntasticWarn cterm=undercurl ctermfg=Yellow term=underline
 let g:syntastic_check_on_open = 1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
+" Thanks to http://superuser.com/questions/558876/how-can-i-make-the-sign-column-show-up-all-the-time-even-if-no-signs-have-been-a
+autocmd BufEnter * sign define dummy
+autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
 " Map item list (which is where :Errors are stored by syntastic) to Alt-Left and Alt-Right 
 nnoremap <A-Right> :lnext<CR>
 nnoremap <A-Left> :lprev<CR>
