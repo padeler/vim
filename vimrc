@@ -16,10 +16,6 @@ call vundle#rc()
 Plugin 'gmarik/vundle' 
 " YCM 
 Bundle 'Valloric/YouCompleteMe'
-" Code and files fuzzy finder
-"Bundle 'kien/ctrlp.vim'
-" Extension to ctrlp, for fuzzy command finder
-"Bundle 'fisadev/vim-ctrlp-cmdpalette'
 " Better file browser
 Bundle 'scrooloose/nerdtree'
 " Class/module browser
@@ -34,6 +30,11 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 " Jedi-vim
 Bundle 'davidhalter/jedi-vim'
+" fugitive git integration
+Bundle 'tpope/vim-fugitive'
+" Tabman 
+"Bundle 'kien/tabman.vim'
+
 
 " Since we are using YCM for autocomplete, disable the jedi-vim autocomple
 let g:jedi#completions_enabled = 0
@@ -58,7 +59,7 @@ color wombat256mod
 "color adrian
 
 " set another theme for the airline 
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'dark'
 
 filetype plugin indent on
 filetype plugin on
@@ -131,9 +132,10 @@ noremap <leader>n :nohl<CR>
 nnoremap ZZ ZQ
 
 " absolute line numbers in insert mode, relative otherwise for easy movement
-au InsertEnter * :set nu nornu
-au InsertLeave * :set nonu rnu
-set nonu rnu
+"au InsertEnter * :set nu nornu
+"au InsertLeave * :set nonu rnu
+" turns out both always is better
+set nu rnu
 
 " easier moving between tabs
 map <Leader>, <esc>:tabprevious<CR>
@@ -190,10 +192,7 @@ set wildmode=list:longest
 "
 " Airline config
 set laststatus=2
-
-" Remap CtrlPCmdPallette to auto complete commands
-nnoremap <leader>p :CtrlPCmdPalette<CR>
-
+"
 " Nerd Commenter Toggle comment
 map ./ <plug>NERDCommenterToggle
 
