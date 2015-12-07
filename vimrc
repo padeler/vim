@@ -193,8 +193,9 @@ set wildmode=list:longest
 " YCM settings
 " Set the global ycm_extra_conf file for C/C++ auto complete.
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-
-
+let g:ycm_goto_buffer_command = 'new-or-existing-tab'
+let g:ycm_extra_conf_globlist = ['~/work/*','/media/storage/home/padeler/work/*','!~/*']
+map <silent> <F3> <esc>:YcmCompleter GoTo<CR>
 "
 " Airline config
 set laststatus=2
