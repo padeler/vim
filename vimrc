@@ -30,8 +30,10 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 " Jedi-vim
 Bundle 'davidhalter/jedi-vim'
+" ctrlp fuzzy search
+Bundle 'ctrlpvim/ctrlp.vim'
 " fugitive git integration
-Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-fugitive'
 " Tabman 
 "Bundle 'kien/tabman.vim'
 
