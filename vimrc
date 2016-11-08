@@ -139,6 +139,14 @@ nnoremap ZZ ZQ
 " turns out both always is better
 set nu rnu
 
+
+function! ToggleNumbers()
+    set invnu
+    set invrnu
+endfunction
+
+map <Leader>1 <ESC>:call ToggleNumbers()<CR>
+
 " easier moving between tabs
 map <Leader>, <esc>:tabprevious<CR>
 map <Leader>. <esc>:tabnext<CR>
