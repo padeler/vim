@@ -15,7 +15,7 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle' 
 " YCM 
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 " Better file browser
 Bundle 'scrooloose/nerdtree'
 " Class/module browser
@@ -36,7 +36,8 @@ Bundle 'ctrlpvim/ctrlp.vim'
 "Bundle 'tpope/vim-fugitive'
 " Tabman 
 "Bundle 'kien/tabman.vim'
-
+" vim markdown plugin
+Bundle 'gabrielelana/vim-markdown'
 
 " Since we are using YCM for autocomplete, disable the jedi-vim autocomple
 let g:jedi#completions_enabled = 0
