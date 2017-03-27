@@ -46,6 +46,10 @@ let g:jedi#completions_enabled = 0
 autocmd! bufwritepost ~/.vim/vimrc source %
 
 
+" vim-markdown options
+" disable spellcheck
+let g:markdown_enable_spell_checking = 0
+
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
 " XXX This is working only with Scemes that define the ExtraWhitespace field.
