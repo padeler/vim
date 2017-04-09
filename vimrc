@@ -45,6 +45,8 @@ let g:jedi#completions_enabled = 0
 " Automatic reloading of .vimrc
 autocmd! bufwritepost ~/.vim/vimrc source %
 
+" ctrlp settings
+let g:ctrlp_by_filename = 1
 
 " vim-markdown options
 " disable spellcheck
