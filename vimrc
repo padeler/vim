@@ -47,7 +47,11 @@ Plugin 'tmhedberg/SimpylFold'
 autocmd! bufwritepost ~/.vim/vimrc source %
 
 " ctrlp settings
+" search by filename
 let g:ctrlp_by_filename = 1
+" use the nearest .git directory as cwd
+let g:ctrlp_working_path_mode = 'r'
+
 
 " vim-markdown options
 " disable spellcheck
@@ -70,6 +74,10 @@ color wombat256mod
 
 " set another theme for the airline 
 let g:airline_theme = 'papercolor'
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 filetype plugin indent on
 filetype plugin on
@@ -174,10 +182,18 @@ endfunction
 " Toggle line number easilly
 map <Leader>1 <ESC>:call ToggleNumbers()<CR>
 
-" easier moving between tabs
+" easier moving between buffers
 map <Leader>, <esc>:tabprevious<CR>
 map <Leader>. <esc>:tabnext<CR>
 map <Leader>t <esc>:tabnew<CR>
+
+" allow modified buffers to be hidden 
+set hidden
+
+
+" move between buffers
+nnoremap <silent> <A-Right> <esc>:bnext<CR>
+nnoremap <silent> <A-Left> <esc>:bprev<CR> 
 
 " map sort function to a key
 vnoremap <Leader>s :sort<CR>
@@ -261,9 +277,10 @@ let g:syntastic_warning_symbol = '⚠'
 " Thanks to http://superuser.com/questions/558876/how-can-i-make-the-sign-column-show-up-all-the-time-even-if-no-signs-have-been-a
 autocmd BufEnter * sign define dummy
 autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+"
 " Map item list (which is where :Errors are stored by syntastic) to Alt-Left and Alt-Right 
-nnoremap <A-Right> :lnext<CR>
-nnoremap <A-Left> :lprev<CR>
+"nnoremap <A-Right> :lnext<CR>
+"nnoremap <A-Left> :lprev<CR>
 
  "TagBar Config
 map <C-o> :TagbarToggle<CR>
