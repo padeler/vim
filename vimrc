@@ -38,6 +38,8 @@ Bundle 'ctrlpvim/ctrlp.vim'
 "Bundle 'kien/tabman.vim'
 " vim markdown plugin
 Bundle 'gabrielelana/vim-markdown'
+" Proper folding
+Plugin 'tmhedberg/SimpylFold'
 
 " Since we are using YCM for autocomplete, disable the jedi-vim autocomple
 let g:jedi#completions_enabled = 1
@@ -118,6 +120,35 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+" Split behavior
+set splitbelow
+set splitright
+
+" system clipboard
+set clipboard=unnamed
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" enable folding with spacebar
+nnoremap <space> za
+" show docstrings of folds (simplyforl plugin)
+let g:SimpylFold_docstring_preview=1
+
+
+" Python PEP8 
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+set encoding=utf-8
 
 " ============================================================================
 " ================= Cool stuff found on vimbits.com ========================== 
@@ -201,7 +232,7 @@ set wildmode=list:longest
 
 
 " enable python specific syntax highlight
-" let python_highlight_all=1 
+let python_highlight_all=1 
 
 " ===========================================================================
 " ========================= Plugin Settings ================================= 
@@ -213,6 +244,9 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_goto_buffer_command = 'new-or-existing-tab'
 let g:ycm_extra_conf_globlist = ['~/work/*','/media/storage/home/padeler/work/*','!~/*']
 map <silent> <F3> <esc>:YcmCompleter GoTo<CR>
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 "
 " Airline config
 set laststatus=2
