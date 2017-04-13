@@ -22,6 +22,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 " Airline
 Bundle 'bling/vim-airline'
+" Airline themes
+Plugin 'vim-airline/vim-airline-themes'
 " Drag visual blocks arround
 Bundle 'fisadev/dragvisuals.vim'
 " Syntastic syntax checking
@@ -29,7 +31,7 @@ Bundle 'scrooloose/syntastic'
 " Nerd-commenter
 Bundle 'scrooloose/nerdcommenter'
 " Jedi-vim
-Bundle 'davidhalter/jedi-vim'
+"Bundle 'davidhalter/jedi-vim'
 " ctrlp fuzzy search
 Bundle 'ctrlpvim/ctrlp.vim'
 " fugitive git integration
@@ -40,9 +42,6 @@ Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'gabrielelana/vim-markdown'
 " Proper folding
 Plugin 'tmhedberg/SimpylFold'
-
-" Since we are using YCM for autocomplete, disable the jedi-vim autocomple
-let g:jedi#completions_enabled = 1
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost ~/.vim/vimrc source %
@@ -70,7 +69,7 @@ color wombat256mod
 "color adrian
 
 " set another theme for the airline 
-let g:airline_theme = 'dark'
+let g:airline_theme = 'papercolor'
 
 filetype plugin indent on
 filetype plugin on
@@ -137,17 +136,6 @@ nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
 
 
-" Python PEP8 
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 set encoding=utf-8
 
 " ============================================================================
@@ -183,6 +171,7 @@ function! ToggleNumbers()
     set invrnu
 endfunction
 
+" Toggle line number easilly
 map <Leader>1 <ESC>:call ToggleNumbers()<CR>
 
 " easier moving between tabs
@@ -241,11 +230,11 @@ let python_highlight_all=1
 " YCM settings
 " Set the global ycm_extra_conf file for C/C++ auto complete.
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-let g:ycm_goto_buffer_command = 'new-or-existing-tab'
+let g:ycm_goto_buffer_command = 'new-or-existing-buffer'
 let g:ycm_extra_conf_globlist = ['~/work/*','/media/storage/home/padeler/work/*','!~/*']
 map <silent> <F3> <esc>:YcmCompleter GoTo<CR>
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_autoclose_preview_window_after_completion=0
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "
 " Airline config
@@ -276,23 +265,16 @@ autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('
 nnoremap <A-Right> :lnext<CR>
 nnoremap <A-Left> :lprev<CR>
 
-
-
-" Settings for jedi-vim
-"" XXX Maybe switch to YouCompleteMe.
-"let g:jedi#usages_command = "<leader>z"
-"let g:jedi#popup_on_dot = 0
-"let g:jedi#popup_select_first = 0
-" "map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-
  "TagBar Config
 map <C-o> :TagbarToggle<CR>
 
  "NERD Tree Config
 " NERD Tree is a file browser for VIM
 map <C-n> :NERDTreeToggle<CR>
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p " move to the editor window
 " Close vim is the last window open is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Settings for text and tex files 
 "if &ft=='text' || &ft=='tex' 
