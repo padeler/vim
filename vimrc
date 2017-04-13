@@ -8,6 +8,8 @@
 syntax off
 filetype off
 
+set encoding=utf-8
+
 " Initialize Vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
@@ -144,7 +146,6 @@ nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
 
 
-set encoding=utf-8
 
 " ============================================================================
 " ================= Cool stuff found on vimbits.com ========================== 
@@ -212,12 +213,13 @@ inoremap <A-Up> <Esc>:m .-2<CR>==gi
 vnoremap <A-Down> :m '>+1<CR>gv=gv
 vnoremap <A-Up> :m '<-2<CR>gv=gv
 
-" Map the CTRL-F11 key to run Python code. Test your
+" Map the CTRL-F9 key to run Python code. Test your
 " code the easy way. Press to run the code, then to return to Vim. This will
 " allow you to easily press the letter 'u' to undo anything that does not work.
 " Of course you can substitute :!python % for :!bash % to run your Bash
 " scripts!
-map <C-F11> :w<CR>:!ipython % <CR>
+map <C-F9> :w<CR>:!ipython % <CR>
+map <F9> :w<CR>:!ipdb % <CR>
 
 " bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
@@ -250,12 +252,12 @@ let g:ycm_goto_buffer_command = 'new-or-existing-buffer'
 let g:ycm_extra_conf_globlist = ['~/work/*','/media/storage/home/padeler/work/*','!~/*']
 map <silent> <F3> <esc>:YcmCompleter GoTo<CR>
 let g:ycm_autoclose_preview_window_after_completion=0
-"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "
 " Airline config
 set laststatus=2
-"
+let g:airline_powerline_fonts = 1
+
 " Nerd Commenter Toggle comment
 map ./ <plug>NERDCommenterToggle
 
