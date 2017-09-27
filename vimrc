@@ -1,7 +1,7 @@
-"
-" Vim config by padeler 
-" 23-04-2014
-"
+"""""""""""""""""""""""""
+" Vim config by padeler "
+" Created 23-04-2014    "
+"""""""""""""""""""""""""
 
 " Initially disable filetype and syntax.
 " These are re-enabled below.
@@ -17,7 +17,7 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle' 
 " YCM 
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 " Better file browser
 Bundle 'scrooloose/nerdtree'
 " Class/module browser
@@ -33,7 +33,7 @@ Bundle 'scrooloose/syntastic'
 " Nerd-commenter
 Bundle 'scrooloose/nerdcommenter'
 " Jedi-vim
-"Bundle 'davidhalter/jedi-vim'
+Bundle 'davidhalter/jedi-vim'
 " ctrlp fuzzy search
 Bundle 'ctrlpvim/ctrlp.vim'
 " fugitive git integration
@@ -44,6 +44,8 @@ Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'gabrielelana/vim-markdown'
 " Proper folding
 Plugin 'tmhedberg/SimpylFold'
+" Bclose close buffer without closing the windows it is displayed in.
+Plugin 'rbgrouleff/bclose.vim'
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost ~/.vim/vimrc source %
@@ -187,6 +189,9 @@ map <Leader>1 <ESC>:call ToggleNumbers()<CR>
 map <Leader>, <esc>:tabprevious<CR>
 map <Leader>. <esc>:tabnext<CR>
 map <Leader>t <esc>:tabnew<CR>
+
+" Close current buffer (but not the window)
+map <Leader>q <esc>:Bclose<CR>
 
 " allow modified buffers to be hidden 
 set hidden
