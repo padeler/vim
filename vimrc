@@ -193,6 +193,15 @@ map <Leader>t <esc>:tabnew<CR>
 " Close current buffer (but not the window)
 map <Leader>q <esc>:Bclose<CR>
 
+
+" Bad habbits: ctrl-s saves documents in most IDEs.
+" Note: To disable ctrl-s scroll lock in your terminal 
+" add the following to .bashrc
+" bind -r '\C-s'
+" stty -ixon
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
+
 " allow modified buffers to be hidden 
 set hidden
 
