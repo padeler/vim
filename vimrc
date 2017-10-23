@@ -304,8 +304,9 @@ map <C-o> :TagbarToggle<CR>
  "NERD Tree Config
 " NERD Tree is a file browser for VIM
 map <C-n> :NERDTreeToggle<CR>
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p " move to the editor window
+" Open nerd tree on startup:
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p " move to the editor window
 " Close vim is the last window open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
