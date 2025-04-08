@@ -12,7 +12,7 @@ Clone
 
 To use this configuration:
 
-* ``cd ~ && git clone git://github.com/padeler/vim.git .vim``
+* ``cd ~ && git clone https://github.com/padeler/vim.git .vim``
 * ``cd ~ && ln -s .vim/vimrc .vimrc`` #(not needed if vim looks for .vim/vimrc)
 * ``cd ~/.vim && git submodule update --init`` #(to get all plugins from git,
   actually only vundle)
